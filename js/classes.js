@@ -62,7 +62,7 @@ class RangeValidator {
     if (typeof value1 !== "number") {
       throw new TypeError("Value must be a number!");
     }
-    if (value1 < 1 || value1 === NaN || value1 > this.to) {
+    if (value1 < 1 || Number.isNaN(value1) || value1 > this.to) {
       throw new RangeError(
         "Value must be > 0 or less than last number of range!"
       );
@@ -78,7 +78,7 @@ class RangeValidator {
     if (typeof value2 !== "number") {
       throw new TypeError("Value must be a number!");
     }
-    if (value2 > 100 || value2 === NaN || value2 < this.from) {
+    if (value2 > 100 || Number.isNaN(value2) || value2 < this.from) {
       throw new RangeError(
         "Value must be less than 100 or  biger then first number of range"
       );
